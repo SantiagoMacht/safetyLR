@@ -1,36 +1,18 @@
--- safety_hud.lua (para usar como script local)
--- Muestra en pantalla un contador de incidentes solo en carrera
-
-local incident_count = 0
-local sessionType
-
--- Callback que recibe información de sesión
-function script.onSessionInfo(info)
-    sessionType = info.type  -- "practice", "qualify", "race"
+function script.windowMain(dt)
+  ui.text('Hello world!')
 end
 
--- Callback genérico para registrar un incidente
-local function registerIncident()
-    if sessionType ~= "race" then return end
-    incident_count = incident_count + 1
+-- optional
+function script.windowSettings(dt)
+  -- draw settings ui
 end
 
--- Ejemplo: conectarse a eventos reales (collision, offtrack, etc.)
-function script.onCollision(data)
-    registerIncident()
+-- optional 
+function script.Draw3D(dt)
+  -- draw something with the render. functions
 end
 
-function script.onOfftrack(data)
-    registerIncident()
-end
-
--- HUD: dibuja el contador en pantalla
+-- optional, standard available function 
 function script.update(dt)
-    if sessionType == "race" then
-        ui.drawText(10, 10, "Incidentes esta sesión: " .. incident_count)
-    end
-end
-
-function script.drawUI()
-    ui.drawText(10, 10, "SCRIPT ACTIVO", 1.5, rgbm.colors.white)
+  -- called each frame!!
 end

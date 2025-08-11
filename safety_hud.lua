@@ -31,6 +31,6 @@ function script.update(dt)
     end
 end
 
-function script.update(dt)
-    ui.drawText(10, 10, "SCRIPT ACTIVO")
+function script.drawUI()
+    ui.drawText(10, 10, "SCRIPT ACTIVO", 1.5, rgbm.colors.white)
 end

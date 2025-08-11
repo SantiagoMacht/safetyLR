@@ -30,3 +30,7 @@ function script.update(dt)
         ui.drawText(10, 10, "Incidentes esta sesión: " .. incident_count)
     end
 end
+
+function script.update(dt)
+    ui.drawText(10, 10, "SCRIPT ACTIVO")
+end
